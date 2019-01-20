@@ -77,9 +77,7 @@ nav{
     letter-spacing: -0.3px;
 }
 
-.active a{
-    color: #1abc9c;
-}
+
 
 .header-title a:hover,
 .header-title a:focus{
