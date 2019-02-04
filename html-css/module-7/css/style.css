@@ -1,0 +1,221 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    max-width: 1400px;
+}
+
+.main-size{
+    width: 940px;
+    margin: 0 auto;
+}
+
+.header-page{
+    margin-bottom: 116px;
+}
+
+nav{
+    width: 100%;
+    padding-top: 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.logo{
+    display: block;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 26px;
+    line-height: 41px;
+    color: #fed136;
+    text-decoration: none;
+}
+
+.main-nav{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 480px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-item a{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 41px;
+    color: #3f3f3f;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color .2s linear;
+}
+
+.nav-item a:hover{
+    color: #fed75e;
+}
+
+.services-section{
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+.services-section h2,
+.form-section h2{
+    margin: 0 0 8px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 75px;
+    letter-spacing: -1px;
+    color:#222222;
+    text-transform: uppercase;
+}
+
+.services-section h3,
+.form-section h3{
+    margin: 0 0 74px 0;
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    color: #777;
+}
+
+.section-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-item{
+    width: 284px;
+    padding-top: 95px;
+    background: url(../img/icon-1.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.section-item:nth-child(2){
+    background: url(../img/icon-2.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.section-item:nth-child(3){
+    background: url(../img/icon-3.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.section-item h4{
+    margin: 0 0 12px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: -.45px;
+    color: #222;
+}
+
+.section-item-descript{
+    margin: 0;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -.35px;
+    color: #777;
+}
+
+.form-section{
+    width: 100%;
+    background: url(../img/main-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.form-wrap{
+    padding: 102px 0 85px 0;
+}
+
+.form-section h2{
+    color: #fff;
+}
+
+
+.form-position{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.input-wrap{
+    width: 455px;
+}
+
+.form-input{
+    width: 455px;
+    height: 52px;
+    margin-bottom: 28px;
+}
+
+.input-decoration{
+    padding: 16px 0 19px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 700;
+    letter-spacing: -.35px;
+    color: #bbbbbb;
+    border: none;
+    border-radius: 2px;
+}
+
+::placeholder{
+    text-transform: uppercase;
+    color: #bbbbbb;
+}
+
+input:valid, textarea:valid{
+    outline: 1px solid #06aa06;
+}
+
+input:invalid, textarea:invalid{
+    outline: 1px solid #c90711;
+}
+
+input:last-child{
+    outline: none;
+}
+
+.form-input:last-child{
+    margin-bottom: 0;
+}
+
+textarea{
+    width: 455px;
+    height: 211px;
+    resize: none;
+}
+
+input[type="submit"]{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    padding: 23px 45px 25px;
+    background-color: #fed136;
+    color: #fff0cb;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+}
