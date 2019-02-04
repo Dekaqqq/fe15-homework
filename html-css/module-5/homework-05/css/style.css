@@ -346,12 +346,12 @@ nav{
 
 .btn:hover{
     background-color: #1abc9c;
-    border: none;
+    border: 1px solid #1abc9c;
 }
 
 .social-icons .cart-btn:hover{
     background-color: #1abc9c;
-    border: none;
+    border: 1px solid #1abc9c;
 }
 
 footer{
