@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+main{
+    min-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.share-section{
+    width: 100%;
+    padding: 20px 14px 138px;
+    background: url(../img/share-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 116px;
+}
+
+.menu a{
+    font-size: 14px;
+    padding: 8px 16px 6px;
+    font-weight: 700;
+    line-height: 17px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu .sign-up{
+    border: 2px solid #fff;
+    border-radius: 15px;
+}
+
+.share-section h3{
+    margin-top: 0;
+    margin-bottom: 32px;
+    font-size: 20px;
+    line-height: 24px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.share-section h2{
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-size: 30px;
+    line-height: 36px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.share-section-desc{
+    width: 220px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+}
+
+.share-section-desc p{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+    color: #fff;
+}
+
+.share-section button{
+    padding: 0 48px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    color: #fff;
+    border: none;
+    border-radius: 17px;
+    background: #ff4e50;
+    outline: none;
+}
+
+
+.partner-section{
+    width: 100%;
+    padding: 68px 18px 56px;
+}
+
+.partner-section h2{
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    line-height: 26px;
+    color: #333;
+}
+
+.partner-list{
+    margin: 0 0 24px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.partner-item:not(:last-child){
+    margin-bottom: 22px;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.image-box{
+    position: relative;
+    display: inline-block;
+    font-size: 0;
+    margin-bottom: 20px;
+}
+
+.main-img{
+    border-radius: 50%;
+}
+
+.decroration-image{
+    position: absolute;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+}
+
+.partner-item h4{
+    margin-top: 0px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #333;
+}
+
+.partner-item p{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 300;
+    color: #666;
+}
+
+
+.partner-section .partner-btn{
+    padding: 0 71px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    color: #ff4e50;
+    border: 2px solid #ff4e50;
+    border-radius: 18px;
+    background: none;
+    outline: none;
+}
+
+
+
+@media (min-width: 768px){
+    .share-section{
+        padding: 38px 50px 234px;
+        background: url(../img/share-bg-tabl.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .top-side{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .top-side h3{
+        order: -1;
+    }
+
+    .share-section h2{
+        font-size: 52px;
+        line-height: 62px;
+        margin-bottom: 26px;
+    }
+
+    .share-section p{
+        font-size: 24px;
+        line-height: 29px;
+    }
+
+    .menu{
+        margin-bottom: 142px;
+    }
+
+    .share-section-desc{
+        width: 100%;
+        margin-bottom: 34px;
+    }
+
+    .share-section button{
+        padding: 0 20px;
+    }
+
+    .partner-section{
+        padding: 72px 138px 40px;
+    }
+
+    .partner-section h2{
+        margin-bottom: 30px;
+    }
+
+    .partner-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 36px;
+    }
+
+    .partner-item{
+        flex: 0 0 44%;
+    }
+
+    .order-tab-1{
+        order: 1;
+    }
+
+    .order-tab-2{
+        order: 3;
+    }
+
+    .order-tab-3{
+        order: 2;
+    }
+
+    .order-tab-4{
+        order: 4;
+    }
+}
