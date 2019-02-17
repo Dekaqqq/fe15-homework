@@ -12,23 +12,17 @@ body{
 
 main{
     min-width: 320px;
-    margin: 0 auto;
-    text-align: center;
 }
 
 .share-section{
     width: 100%;
-    padding: 20px 14px 138px;
+    padding: 20px 0 138px;
     background: url(../img/share-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .menu{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: baseline;
     margin-bottom: 116px;
 }
 
@@ -52,6 +46,7 @@ main{
     margin-top: 0;
     margin-bottom: 32px;
     font-size: 20px;
+    font-weight: 700;
     line-height: 24px;
     color: #fff;
     letter-spacing: 1px;
@@ -60,7 +55,8 @@ main{
 .share-section h2{
     margin-top: 0;
     margin-bottom: 6px;
-    font-size: 30px;
+    font-size: 29px;
+    font-weight: 700;
     line-height: 36px;
     color: #fff;
     text-transform: uppercase;
@@ -95,16 +91,16 @@ main{
     outline: none;
 }
 
-
 .partner-section{
     width: 100%;
-    padding: 68px 18px 56px;
+    padding: 68px 3px 56px;
 }
 
 .partner-section h2{
     margin: 0;
     margin-bottom: 20px;
     font-size: 22px;
+    font-weight: 700;
     line-height: 26px;
     color: #333;
 }
@@ -115,8 +111,12 @@ main{
     list-style: none;
 }
 
-.partner-item:not(:last-child){
+.partner-item{
     margin-bottom: 22px;
+}
+
+.last-item{
+    margin-bottom: 0;
 }
 
 img{
@@ -150,6 +150,7 @@ img{
     margin-top: 0px;
     margin-bottom: 16px;
     font-size: 14px;
+    font-weight: 700;
     line-height: 17px;
     color: #333;
 }
@@ -162,7 +163,6 @@ img{
     font-weight: 300;
     color: #666;
 }
-
 
 .partner-section .partner-btn{
     padding: 0 71px;
@@ -178,26 +178,16 @@ img{
     outline: none;
 }
 
-
-
-@media (min-width: 768px){
+@media (min-width:768px){
     .share-section{
-        padding: 38px 50px 234px;
+        padding: 38px 35px 234px;
         background: url(../img/share-bg-tabl.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     }
 
-    .top-side{
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-        align-items: center;
+    .menu{
         margin-bottom: 142px;
-    }
-
-    .top-side h3{
-        order: -1;
     }
 
     .share-section h2{
@@ -209,10 +199,6 @@ img{
     .share-section p{
         font-size: 24px;
         line-height: 29px;
-    }
-
-    .menu{
-        margin-bottom: 0;
     }
 
     .share-section h3{
@@ -229,7 +215,7 @@ img{
     }
 
     .partner-section{
-        padding: 72px 138px 40px;
+        padding: 72px 0 40px;
     }
 
     .partner-section h2{
@@ -237,30 +223,11 @@ img{
     }
 
     .partner-list{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
         margin-bottom: 36px;
     }
 
-    .partner-item{
-        flex: 0 0 220px;
-    }
-
-    .order-tab-1{
-        order: 1;
-    }
-
-    .order-tab-2{
-        order: 3;
-    }
-
-    .order-tab-3{
-        order: 2;
-    }
-
-    .order-tab-4{
-        order: 4;
+    .mb-md{
+        margin-bottom: 0;
     }
 
     .partner-section .partner-btn{
@@ -269,15 +236,15 @@ img{
     }
 }
 
-@media (min-width: 1440px){
+@media (min-width: 1400px){
     .share-section{
-        padding: 38px 250px 234px;
+        padding: 38px 215px 234px;
         background: url(../img/share-bg-desktop.jpg);
         background-repeat: no-repeat;
         background-size: cover;
     }
 
-    .top-side{
+    .menu{
         margin-bottom: 155px;
     }
 
@@ -290,7 +257,7 @@ img{
     }
 
     .partner-section{
-        padding: 68px 250px 72px;
+        padding: 68px 235px 72px;
     }
 
     .partner-section h2{
