@@ -1,0 +1,121 @@
+.team-section{
+    padding-top: 84px;
+
+    &__txt{
+        margin: 0 auto 90px;
+        width: 944px;
+        text-align: center;
+        font-family: $serviceFont;
+        font-size: $teamTxtSize;
+        line-height: $teamTxtHeight;
+        color: $teamTxtColor;
+    }
+
+    &__list{
+        @extend %list;
+        margin-bottom: 82px;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item{
+        position: relative;
+
+        &:hover .team-section__team-img{
+            transform: translate(-10px,-10px);
+        }
+
+        &:hover .overlay{
+        opacity: 1;
+        }
+    }
+
+    &__team-img{
+        display: block;
+        max-width: 100%;
+        height: auto;
+        transition: transform .2s linear;
+    }
+
+    &__team-title{
+        margin: 28px 0 10px;
+        font-family: $mainFont;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 17px;
+        color: $teamTitleColor;
+        text-transform: uppercase;
+    }
+
+    
+    &__imb-box{
+        background-color: $serviceSvgFill;
+    }
+
+    &__team-txt{
+        margin: 0;
+        font-family: $serviceFont;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 15px;
+        line-height: 24px;
+        color: $teamDescColor;  
+    }
+
+}
+
+.overlay{
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 380px;
+    height: 470px;
+    background: linear-gradient(to top, rgba(252,227,138,.85) 0%, rgba(243,129,129,.85) 100%);
+    opacity: 0;
+    z-index: 1;
+    transition: opacity .2s linear;
+
+    &__list{
+        @extend %list;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__link{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 56px;
+        height: 56px;
+        background-color: $teamSocialColor;
+        border-right: 1px solid $teamBorder;
+        transition: background-color .2s linear;
+
+        &--nobr{
+            border-right: none;
+        }
+
+        &:hover{
+            background-color: $teamSocialHover;
+        }
+
+        &:hover .overlay__svg{
+            fill: $teamSvgFill;
+        }
+    }
+
+    &__svg{
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        fill: $headlineDecoration;
+    }
+
+
+}
+
+

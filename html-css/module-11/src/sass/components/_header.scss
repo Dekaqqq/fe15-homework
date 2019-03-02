@@ -1,0 +1,83 @@
+.header-wrap{
+    max-width: 1920px;
+    background: linear-gradient(to bottom, rgba(243,129,129,.9) 0%, rgba(252,227,138,.9) 100%), url(../../images/eagle-min.jpg);
+    background-position: center top;
+    background-size: cover;
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
+        background-image: linear-gradient(to bottom, rgba(243,129,129,.9) 0%, rgba(252,227,138,.9) 100%), url(../../images/eagle@2x-min.jpg);
+        background-position: center top;
+        background-size: cover;
+    }
+}
+
+.header{
+    width: 100%;
+    padding-top: 26px;
+    padding-bottom: 230px;
+}
+
+.nav{
+    margin-bottom: 164px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo{
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: 700;
+        color: $mainColor;
+    }
+    &__list{
+        @extend %list;
+        width: 490px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__link{
+        padding-bottom: 10px;
+        font-size: 14px;
+        line-height: 17px;
+        color: $mainColor;
+        text-transform: uppercase;
+        transition: color .2s linear, border-bottom .2s linear;
+        border-bottom: 3px solid transparent;
+
+        &:hover{
+            color: $headerHover;
+            border-bottom: 3px solid $headerHover;
+        }
+
+        &:hover .header__svg{
+            fill: $headerHover;
+        }
+    }
+
+    &__svg{
+        width: 18px;
+        height: 14px;
+        fill: $mainColor;
+    }
+}
+
+.header__title{
+    @extend %title;
+    margin-bottom: 22px;
+    font-size: 72px;
+    line-height: 86px;
+    color: $mainColor;
+}
+
+.header__headline{
+    @extend %headline;
+    margin-bottom: 84px;
+    font-size: 150px;
+    line-height: 140px;
+    color: $mainColor;
+}
+
+.button--header{
+    @include button;
+    margin: 0 auto;
+}

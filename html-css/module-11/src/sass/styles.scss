@@ -1,0 +1,16 @@
+/*
+   Import partials below
+*/
+@import './helpers/vars';
+@import './normalize';
+@import './helpers/fonts';
+@import './helpers/mixins';
+//components
+@import './components/svg';
+@import './components/common';
+@import './components/header';
+@import './components/service-section';
+@import './components/team';
+@import './components/footer';
+
+

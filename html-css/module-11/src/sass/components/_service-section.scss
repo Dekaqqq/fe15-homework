@@ -1,0 +1,79 @@
+.section{
+    width: 100%;
+}
+
+.service-section{
+    padding-top: 44px;
+
+    &__list{
+        @extend %list;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__item{
+        width: 334px;
+        padding-left: 64px;
+        margin-bottom: 98px;
+
+        &:nth-last-of-type(-n + 3){
+             margin-bottom: 0;
+        }
+    }
+
+}
+
+.section__title{
+    @extend %title;
+    font-size: $sectionTitleSize;
+    line-height: $sectionTitleHeight;
+}
+
+.section__headline{
+    @extend %headline;
+    margin: 18px 0 64px;
+    font-size: $sectionHeadlineSize;
+    line-height: $sectionHeadlineHeignt;
+    color: $sectionHeadlineColor;
+
+    &::after{
+        content: '';
+        display: block;
+        margin: 38px auto 0;
+        width: 60px;
+        height: 3px;
+        background-color: $headlineDecoration;
+    }
+}
+
+.item-container{
+    position: relative;
+
+    &__headline{
+        margin: 0;
+        font-size: $serviceLowerHeadlineSize;
+        line-height: $serviceLowerHeadlineHeight;
+        color: $sectionHeadlineColor;
+        text-transform: uppercase;
+    }
+
+    &__title{
+        margin: 14px 0 0;
+        font-family: $serviceFont;
+        font-size: $serviceDescSize;
+        line-height: $serviceDescHeight;
+        color: $sectionHeadlineColor;
+    }
+
+    &__svg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 32px;
+        height: 32px;
+        fill: $serviceSvgFill;
+    }
+}
+
+
