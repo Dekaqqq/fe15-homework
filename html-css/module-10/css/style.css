@@ -84,7 +84,7 @@
     padding-bottom: 230px;
 }
 
-.header__nav{
+.nav{
     margin-bottom: 164px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -95,14 +95,14 @@
     align-items: center;
 }
 
-.header__logo{
+.nav__logo{
     font-size: 30px;
     line-height: 36px;
     font-weight: var(--bold);
     color: var(--white);
 }
 
-.header__list{
+.nav__list{
     width: 490px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -114,7 +114,7 @@
     -ms-flex-align: center;
 }
 
-.header__link{
+.nav__link{
     padding-bottom: 10px;
     font-size: 14px;
     line-height: 17px;
@@ -126,16 +126,16 @@
     border-bottom: 3px solid transparent;
 }
 
-.header__link:hover{
+.nav__link:hover{
     color: #fce38a;
     border-bottom: 3px solid #fce38a;
 }
 
-.header__link:hover .header__svg{
+.nav__link:hover .header__svg{
     fill: #fce38a;
 }
 
-.header__svg{
+.nav__svg{
     width: 18px;
     height: 14px;
     fill: var(--white);
@@ -159,19 +159,20 @@
     margin: 0 auto;
 }
 
-.service-section{
+.section{
     width: 100%;
-    padding-top: 44px;
-    margin-bottom: 84px;
 }
 
-.section-title{
+.service-section{
+    padding-top: 44px;
+}
+
+.section__title{
     font-size: 24px;
     line-height: 29px;
-   
 }
 
-.section-headline{
+.section__headline{
     margin: 18px 0 64px;
     font-size: 30px;
     line-height: 36px;
@@ -236,6 +237,10 @@
     width: 32px;
     height: 32px;
     fill: #95e1d3;
+}
+
+.team-section{
+    padding-top: 84px;
 }
 
 .team-section__txt{
