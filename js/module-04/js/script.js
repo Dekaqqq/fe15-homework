@@ -29,7 +29,7 @@ const notepad = {
     },
     updateNoteContent(id, updatedContent) {
         if (this.findNoteById(id)) {
-            return this.notes[this.notes.indexOf(this.findNoteById(id))] = {...this.findNoteById(id), ...updatedContent};
+            return this.notes[this.notes.indexOf(this.findNoteById(id))] = Object.assign({}, this.findNoteById(id), updatedContent);
         }
     },
     updateNotePriority(id, priority) {
