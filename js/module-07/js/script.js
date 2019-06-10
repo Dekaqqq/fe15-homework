@@ -129,13 +129,8 @@ console.log(getUsersByFriend(users, 'Goldie Gentry'));
 const getUniqueSkills = users => {
     return users.reduce((acc, el) => {
         el.skills.forEach(skill => {
-            if (!acc.includes(skill)) {
-                acc.push(skill);
-            }
-
-            return acc;
+            if (!acc.includes(skill)) acc.push(skill);
         })
-
         return acc;
     },[]).sort();
 }
