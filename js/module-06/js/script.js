@@ -71,7 +71,6 @@ class Notepad {
     }
 }
 
-
 const initialNotes = [
   {
     id: 'id-1',

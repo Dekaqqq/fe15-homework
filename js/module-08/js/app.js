@@ -122,7 +122,22 @@ const initialNotes = [
   },
 ];
 
+const generateUniqueId = () =>
+  Math.random()
+    .toString(36)
+    .substring(2, 15) +
+  Math.random()
+    .toString(36)
+    .substring(2, 15);
+
+
+
 const notepad = new Notepad(initialNotes);
+const notes = notepad.notes;
+
+const list = document.querySelector('.note-list');
+const noteEditor = document.querySelector('.note-editor');
+const searchForm = document.querySelector('.search-form');
 
 
 const createNoteContent = (title, body) => {
@@ -169,18 +184,14 @@ const createNoteFooter = (priority) => {
     noteSpan.classList.add('note__priority');
     noteSpan.textContent = `Priority: ${priority}`;
 
-    noteSection.appendChild(createActionButton(NOTE_ACTIONS.DECREASE_PRIORITY, ICON_TYPES.ARROW_DOWN));
-    noteSection.appendChild(createActionButton(NOTE_ACTIONS.INCREASE_PRIORITY, ICON_TYPES.ARROW_UP));
-    noteSection.appendChild(noteSpan);
+    noteSection.append(createActionButton(NOTE_ACTIONS.DECREASE_PRIORITY, ICON_TYPES.ARROW_DOWN), createActionButton(NOTE_ACTIONS.INCREASE_PRIORITY, ICON_TYPES.ARROW_UP),noteSpan);
 
     const noteSection2 = document.createElement('section');
     noteSection2.classList.add('note__section');
 
-    noteSection2.appendChild(createActionButton(NOTE_ACTIONS.EDIT, ICON_TYPES.EDIT));
-    noteSection2.appendChild(createActionButton(NOTE_ACTIONS.DELETE, ICON_TYPES.DELETE));
+    noteSection2.append(createActionButton(NOTE_ACTIONS.EDIT, ICON_TYPES.EDIT), createActionButton(NOTE_ACTIONS.DELETE, ICON_TYPES.DELETE));
 
-    noteFooter.appendChild(noteSection);
-    noteFooter.appendChild(noteSection2);
+    noteFooter.append(noteSection, noteSection2);
 
     return noteFooter;
 };
@@ -194,15 +205,14 @@ const createListItem = ({id, title, body, priority}) => {
     const note = document.createElement('div');
     note.classList.add('note');
 
-    note.appendChild(createNoteContent(title, body));
-    note.appendChild(createNoteFooter(priority));
+    note.append(createNoteContent(title, body), createNoteFooter(priority));
 
     listItem.appendChild(note);
 
     return listItem;
 };
 
-const notes = notepad.notes;
+
 
 const renderNoteList = (listRef, notes) => {
     const listItems = notes.map(item => createListItem(item));
@@ -210,9 +220,52 @@ const renderNoteList = (listRef, notes) => {
     listRef.append(...listItems);
 };
 
-const list = document.querySelector('.note-list');
-
 renderNoteList(list, notes);
+
+
+const addListItem = (listRef, note) => {
+    listRef.appendChild(note);
+};
+
+
+const handlerNoteEditor = event => {
+    event.preventDefault();
+
+    const [title, body] = document.querySelectorAll('.note-editor__input');
+    const obj = {};
+
+    if (!title.value || !body.value) {
+        return alert('Необходимо заполнить все поля!');
+    }
+
+    obj.id = generateUniqueId();
+    obj.title = title.value;
+    obj.body = body.value;
+    obj.priority = PRIORITY_TYPES.LOW;
+    
+    notepad.saveNote(obj);
+    addListItem(list, createListItem(obj));
+
+    event.target.reset();
+};
+
+const removeListItem = event => {
+    if (event.target.parentNode.dataset.action === 'delete-note') {
+        notepad.deleteNote(event.target.closest('.note-list__item').dataset.id);
+
+        event.target.closest('.note-list__item').remove();
+    }
+};
+
+const handleSearchForm = event => {
+    list.innerHTML = '';
+    renderNoteList(list, notepad.filterNotesByQuery(event.target.value));
+};
+
+
+noteEditor.addEventListener('submit', handlerNoteEditor);
+list.addEventListener('click', removeListItem);
+searchForm.addEventListener('input', handleSearchForm);
 
 
 
