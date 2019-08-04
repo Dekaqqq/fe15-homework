@@ -23,32 +23,33 @@ const addListItem = (listRef, note) => {
 // notepad.updateNoteContent("XWaQXcbk0", {title: 'tes1'});
 // notepad.updateNotePriority("XWaQXcbk0", {priority: 1});
 
-
 const handlerNoteEditor = async event => {
     event.preventDefault();
-
-    const [title, body] = document.querySelectorAll('.note-editor__input');
-    const newNote = {};
     
+    const [title, body] = document.querySelectorAll('.note-editor__input');
+
     if (!title.value || !body.value) {
         return notyf.error('Необходимо заполнить все поля!');
-    } else { 
-        newNote.id = shortId.generate();
-        newNote.title = title.value;
-        newNote.body = body.value;
-        newNote.priority = PRIORITY_TYPES.LOW;
-        
-        try {
-            const savedNote = await notepad.saveNote(newNote);
+    }
+
+    const newNote = {};
+    newNote.title = title.value;
+    newNote.body = body.value;
+    newNote.priority = PRIORITY_TYPES.LOW;
+
+    try {
+        const savedNote = await notepad.saveNote(newNote);
+        if (savedNote) {
             addListItem(refs.notesList, savedNote);
             MicroModal.close('note-editor-modal');
             notyf.success('Заметка добалена!');
-        } catch (error) {
-            return notyf.error(error.message);
         }
-        event.target.reset();
+
+    } catch (error) {
+        return notyf.error(error.message);
     }
 
+    event.target.reset();
 };
 
 const removeListItem = async event => {
