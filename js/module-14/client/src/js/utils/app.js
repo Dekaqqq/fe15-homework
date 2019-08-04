@@ -24,7 +24,7 @@ const addListItem = (listRef, note) => {
 // notepad.updateNotePriority("XWaQXcbk0", {priority: 1});
 
 
-const handlerNoteEditor = event => {
+const handlerNoteEditor = async event => {
     event.preventDefault();
 
     const [title, body] = document.querySelectorAll('.note-editor__input');
@@ -38,34 +38,39 @@ const handlerNoteEditor = event => {
         newNote.body = body.value;
         newNote.priority = PRIORITY_TYPES.LOW;
         
-        notepad.saveNote(newNote).then(savedNote => {
+        try {
+            const savedNote = await notepad.saveNote(newNote);
             addListItem(refs.notesList, savedNote);
-        });
-        MicroModal.close('note-editor-modal');
-        setTimeout(function () {notyf.success('Заметка добалена!')}, 100);
+            MicroModal.close('note-editor-modal');
+            notyf.success('Заметка добалена!');
+        } catch (error) {
+            return notyf.error(error.message);
+        }
         event.target.reset();
     }
 
 };
 
-const removeListItem = event => {
+const removeListItem = async event => {
     if (event.target.parentNode.dataset.action === 'delete-note') {
-        notepad
-            .deleteNote(event.target.closest('.note-list__item').dataset.id)
-            .then(() => {
-                event.target.closest('.note-list__item').remove();
-                notyf.success('Заметка удалена!');
-            });
+        try {
+            const deletedNote = await notepad.deleteNote(event.target.closest('.note-list__item').dataset.id);
+            event.target.closest('.note-list__item').remove();
+            notyf.success('Заметка удалена!');
+        } catch (error) {
+            return notyf.error(error.message);
+        }
     }
 };
 
-const handleSearchForm = event => {
+const handleSearchForm = async event => {
     refs.notesList.innerHTML = '';
-    notepad
-        .filterNotesByQuery(event.target.value)
-        .then(newArr => {
-            renderNoteList(refs.notesList, newArr);
-        });
+    try {
+        const result = await notepad.filterNotesByQuery(event.target.value);
+        renderNoteList(refs.notesList, result)
+    } catch (error) {
+        return notyf.error(error.message);
+    }
 };
 
 const openMicroModal = () => {
