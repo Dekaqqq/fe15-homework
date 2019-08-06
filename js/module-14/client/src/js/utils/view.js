@@ -9,6 +9,7 @@ const refs = {
 }
 
 const renderNoteList = (listRef, notes) => {
+    if (!notes) return;
     const listItems = notes.map(item => notesTemplate(item)).join('');
 
     listRef.insertAdjacentHTML('beforeend', listItems);
